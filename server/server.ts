@@ -2,7 +2,7 @@ let http = require ('http');
 
 import App from './App';
 
-const port = 8886;
+const port =  process.env.http_port || 8886;
 App.set('port', port);
 
 const server = http.createServer(App);

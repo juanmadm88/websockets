@@ -43,7 +43,8 @@ gulp.task('init-dev', () => {
 			'location': 'localhost',
 			'host': 'localhost',
 			'database': 'mighty-hive-challenge',
-			'port': '27017'
+			'port': '27017',
+			'http_port':'8086'
 		}
 	});
 
