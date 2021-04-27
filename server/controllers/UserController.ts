@@ -22,7 +22,7 @@ class UserController {
         try {
             const filter = this.utils.getFilter(req.body);
             const foundUser = await this.service.get({email:filter.email});
-            if(foundUser) return ResponseUtils.sendInvalidReq(res,Constants.USER_EMAIL_EXISTS)
+            if(this.utils.exists(foundUser)) return ResponseUtils.sendInvalidReq(res,Constants.USER_EMAIL_EXISTS)
             await this.service.create(req.body);
             ResponseUtils.sendCreate(res);
         } catch(error) {
