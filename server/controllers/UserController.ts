@@ -23,8 +23,8 @@ class UserController {
             const filter = this.utils.getFilter(req.body);
             const foundUser = await this.service.get({email:filter.email});
             if(this.utils.exists(foundUser)) return ResponseUtils.sendInvalidReq(res,Constants.USER_EMAIL_EXISTS)
-            await this.service.create(req.body);
-            ResponseUtils.sendCreate(res);
+            const data = await this.service.create(req.body);
+            ResponseUtils.sendCreate(res,data);
         } catch(error) {
             ResponseUtils.sendInternalError(res, error.message);
         }

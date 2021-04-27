@@ -2,14 +2,9 @@ import Constants from '../Constants';
 
 abstract class ResponseUtils {
     
-    public static sendFile: Function=(res:any, data:any):void =>{
-        res.type("image/png");
-        res.send(data);
-    }
-
-    public static sendCreate:Function = (res: any): void => {
+    public static sendCreate:Function = (res: any,data:any): void => {
         res.status(Constants.HTTP_CREATED_STATUS_CODE);
-        res.send();
+        res.send(data);
     }
 
     public static sendQuery:Function = (res: any, data: any): void => {
