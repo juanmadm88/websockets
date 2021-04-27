@@ -18,11 +18,11 @@ class UserUtils extends Utils {
         let options: any = {};
         let conditions:any ={};
         
-        if(filter.firstName)  this.getCondition(conditions, filter.id,this.fieldsToFilter[0]);
+        if(filter.firstName)  this.getCondition(conditions, filter.firstName,this.fieldsToFilter[0]);
         
-        if(filter.lastName) this.getCondition(conditions,filter.name,this.fieldsToFilter[1]);
+        if(filter.lastName) this.getCondition(conditions,filter.lastName,this.fieldsToFilter[1]);
         
-        if(filter.age)  this.getCondition(conditions,filter.lastName,this.fieldsToFilter[2]);
+        if(filter.age)  this.getCondition(conditions,filter.age,this.fieldsToFilter[2]);
 
         if(filter.description) this.getCondition(conditions,filter.description,this.fieldsToFilter[3]);
 
