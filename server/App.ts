@@ -1,4 +1,6 @@
 import Router from './routes/Router';
+import swaggerDocument from './swagger.json';
+let swaggerUi = require('swagger-ui-express');
 
 let express = require('express');
 let bodyParser = require('body-parser');
@@ -32,6 +34,7 @@ class App {
             next();
         });
         this.router.init(express);
+        this.express.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
         this.express.use('/api', this.router.getRoutes());
     }
 }

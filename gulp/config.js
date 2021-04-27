@@ -16,5 +16,12 @@ module.exports = {
 			source + 'tmp/**/*.js'
 		],
 		dest: source
+	},
+	swagger: {
+		name: 'swagger',
+		src: [
+			'server/swagger.json'
+		],
+		dest: source
 	}
 };

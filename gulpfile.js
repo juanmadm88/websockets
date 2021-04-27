@@ -54,6 +54,10 @@ gulp.task('init-dev', () => {
 	})
 });
 
+gulp.task('swaggerFile', () => {
+	return gulp.src(config.swagger.src).pipe(gulp.dest(config.swagger.dest));
+});
+
 gulp.task('build', gulp.series('compile', 'compress', 'clean:temporal'), () => {
     console.console.log('App build!');
 });
@@ -68,4 +72,4 @@ gulp.task('compile-dev', () => {
  });
 
 gulp.task('default', gulp.series(config.clean.name, 'build'));
-gulp.task('start-dev', gulp.series(config.clean.name, 'build-dev', 'init-dev'));
+gulp.task('start-dev', gulp.series(config.clean.name, gulp.parallel('build-dev', 'swaggerFile'), 'init-dev'));
