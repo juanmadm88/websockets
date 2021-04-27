@@ -24,9 +24,9 @@ class UserUtils extends Utils {
         
         if(filter.age)  this.getCondition(conditions,filter.lastName,this.fieldsToFilter[2]);
 
-        if(filter.description) this.getCondition(conditions,filter.age,this.fieldsToFilter[3]);
+        if(filter.description) this.getCondition(conditions,filter.description,this.fieldsToFilter[3]);
 
-        if(filter.email) this.getCondition(conditions,filter.age,this.fieldsToFilter[3]);
+        if(filter.email) this.getCondition(conditions,filter.email,this.fieldsToFilter[3]);
 
         
         if (this.exists(conditions)) {
