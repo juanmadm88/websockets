@@ -34,12 +34,12 @@ class UserController {
         let filter: any = {};
         try {
             filter = this.utils.getFilter(req.query);
+            if(this.utils.exists(req.query) && !this.utils.exists(filter)) return ResponseUtils.sendInvalidReq(res,Constants.INVALID_QUERY_PARAMS)
         } catch(error) {
             ResponseUtils.sendInvalidReq(res, error.message);
         }
         try {
             const users: any = await this.service.get(filter);
-            if (!this.utils.exists(users)) return ResponseUtils.sendInvalidReq(res,Constants.USER_NOT_EXISTS);
             ResponseUtils.sendQuery(res, users);
         } catch (error) {
             ResponseUtils.sendInternalError(res, error.message);

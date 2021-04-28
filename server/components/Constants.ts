@@ -9,8 +9,8 @@ abstract class Constants {
     public static EMPTY_EMAIL: string = "Email is required";
     public static USER_EMAIL_EXISTS: string = "An email has been saved for a preview User";
     public static ID_NOT_EXISTS: string = "User id doesn't exists";
-    public static USER_NOT_EXISTS: string = "User doesn't exists for that/those searching criteria/s";
-    public static ERROR_MESSAGE_UPDATE_USER = "An error occurred while trying to update the user"
+    public static ERROR_MESSAGE_UPDATE_USER: string = "An error occurred while trying to update the user"
+    public static INVALID_QUERY_PARAMS: string = "Invalid filter criterias";
 
     // HTTP methods
     public static GET_METHOD: string = "GET";
